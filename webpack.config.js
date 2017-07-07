@@ -4,6 +4,6 @@ let webpackConfig = defaults.env == 'dev' ?
 	require('./cfg/webpack.dev.config.js') :
 	require('./cfg/webpack.product.config.js');
 
-const PI=3.14;
+
 
 module.exports = webpackConfig;
