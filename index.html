@@ -1,0 +1,111 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+  <title>积分商城</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+  <link rel="stylesheet" type="text/css" href="/dist/libs/reset.min.css">
+  <link rel="stylesheet" type="text/css" href="/dist/commons/commons/styles.css">
+  <link rel="stylesheet" type="text/css" href="/dist/pointmall/pshop/styles.css">
+</head>
+<body>
+
+  <section class="slider">
+    <div>
+      <a href=""><img src="http://localhost:8004/images/creditimg1.jpg"></a>
+    </div>
+    <div>
+      <a href=""><img src="http://localhost:8004/images/creditimg1.jpg"></a>
+    </div>
+    <div>
+      <a href=""><img src="http://localhost:8004/images/creditimg1.jpg"></a>
+    </div>
+  </section>
+  <section class="menu" id="menu">
+     <input type="hidden" name="ch" id="ch" v-model="model.ch" ref="ch" data-init-value=${ch}>
+      <a :href="'auth/drawact.do?'+modelToString"><span class="icon icon-draw"></span>每日抽奖</a><a href=""><span class="icon icon-credit"></span>赚积分</a><a :href="'auth/pshop/addresspage.do?'+modelToString"><span class="icon icon-addr"></span>收货地址</a><a :href="'auth/pshop/record.do?'+modelToString"><span class="icon icon-record"></span>兑换记录</a>
+  </section>
+  <section class="news bb">
+    <div class="news-list">
+       <ul>
+        <li>恭喜艾克里里获得了金立S9!</li> 
+        <li>恭喜fifi获得了蓝牙音箱!</li>
+        <li>恭喜隐形的翅膀成功兑换M2017真皮手包礼包</li>
+      </ul> 
+    </div>
+  </section>
+  <section class="pro" id="pro">
+      <div class="pro-menu bb"><a href="" class="active">全部</a><a href="">热门</a><a href="">实物</a><a href="">虚拟</a></div>
+      <div class="pro-con">
+          <div class="pro-list active">
+              <a :href="'auth/pshop/detail.do?gid=${goods.id}&'+modelToString" class="pro-item">
+                <div class="pro-img">
+                    <img src="http://localhost:8004/images/pro1.jpg">
+                    <span class="pro-num">剩余3999个</span>
+                </div>
+                <span class="pro-name">金属Hi-Fi耳机</span>
+                <span class="pro-integral">432万</span>
+                <span class="pro-val">市场参考价: 980.00元</span>
+              </a>
+              <a href="" class="pro-item">
+                <div class="pro-img">
+                  <img src="http://localhost:8004/images/pro2.jpg">
+                  <span class="pro-soldout">今日已抢光<br>SOLD OUT</span>
+                </div>
+                <span class="pro-name">线控自拍杆</span>
+                <span class="pro-integral">130万</span>
+                <span class="pro-val">市场参考价: 80.00元</span>
+              </a>
+              <a href="" class="pro-item">
+                <div class="pro-img">
+                    <img src="http://localhost:8004/images/pro2.jpg">
+                    <span class="pro-num">剩余391个</span>
+                </div>
+                <span class="pro-name">M2017真皮手包礼包</span>
+                <span class="pro-integral">962万</span>
+                <span class="pro-val">市场参考价: 2880.00元</span>
+              </a>
+              <a href="" class="pro-item">
+                <div class="pro-img">
+                    <img src="http://localhost:8004/images/pro1.jpg">
+                    <span class="pro-num">剩余30个</span>
+                </div>
+                <span class="pro-name">指环支架套装金色</span>
+                <span class="pro-integral">82万</span>
+                <span class="pro-val">市场参考价: 48.00元</span>
+              </a>
+          </div>
+           <div class="pro-list">
+              <a href="" class="pro-item">
+                <div class="pro-img">
+                    <img src="http://localhost:8004/images/pro1.jpg">
+                    <span class="pro-num">剩余30个</span>
+                </div>
+                <span class="pro-name">金属Hi-Fi耳机</span>
+                <span class="pro-integral">432万</span>
+                <span class="pro-val">市场参考价: 980.00元</span>
+              </a>          
+          </div>
+          <div class="pro-list">
+              <a href="" class="pro-item">
+                <div class="pro-img">
+                    <img src="http://localhost:8004/images/pro2.jpg">
+                    <span class="pro-num">剩余30个</span>
+                </div>
+                <span class="pro-name">线控自拍杆</span>
+                <span class="pro-integral">130万</span>
+                <span class="pro-val">市场参考价: 80.00元</span>
+              </a>
+          </div>
+
+      </div>
+  </section>
+
+  <script src="/dist/libs/jquery-3.2.0.min.js" type="text/javascript"></script>
+  <script src="/dist/libs/slick.min.js" type="text/javascript" ></script>
+  <script src="/dist/libs/autoscroll.js" type="text/javascript" ></script>
+  <script src="/dist/libs/vue-2.2.0.min.js" type="text/javascript"></script>
+  <script src="/dist/commons/commons/bundle.js" type="text/javascript"></script>
+  <script src="/dist/pointmall/pshop/entry.js" type="text/javascript"></script>
+  </body>
+</html>

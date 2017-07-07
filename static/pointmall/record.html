@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>中奖记录</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+  <link rel="stylesheet" type="text/css" href="/dist/libs/reset.min.css">
+  <link rel="stylesheet" type="text/css" href="/dist/commons/commons/styles.css">
+  <link rel="stylesheet" type="text/css" href="/dist/pointmall/record/styles.css">
+</head>
+<body>
+  <div id="app">
+    <div v-infinite-scroll="loadMore" infinite-scroll-disabled="busy" infinite-scroll-distance="10">
+        <ul v-for="item in data">
+            <li>{{item.name}}</li>
+        </ul>
+    </div>
+  <div>
+
+  <section class="record">
+      <div class="item">
+          <p class="name"><span class="status">已发放</span>1积分</p>
+          <span class="date">2016-12-10</span>
+      </div>
+
+  <template>
+    <div class="contSingleList" >
+        <div class="tabItem">
+            <slot></slot>
+        </div>
+        <!-- <v-scroll :on-refresh="onRefresh" :on-infinite="onInfinite" :dataList="scrollData">
+                <div class="item" v-for="(item,index) in listdata">
+                    <p class="name"><span class="status">已发放</span>{{ item.name }}</p>
+                    <span class="date">{{ item.time }}</span>
+                </div>
+        </v-scroll> -->
+    </div>
+  </template>
+  </section>
+  <script src="/dist/libs/jquery-3.2.0.min.js"></script>
+  <script src="/dist/libs/vue-2.2.0.min.js"></script>
+  <script src="/dist/commons/commons/bundle.js"></script>
+  <script src="/dist/pointmall/record/entry.js"></script>
+
+
+
+</body>
+</html>

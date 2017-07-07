@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>兑换次数</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+  <link rel="stylesheet" type="text/css" href="/dist/libs/reset.min.css">
+  <link rel="stylesheet" type="text/css" href="/dist/commons/commons/styles.css">
+  <link rel="stylesheet" type="text/css" href="/dist/pointmall/exchange/styles.css">
+</head>
+<body class="exchange">
+  <section id="vue-root">
+    <section class="exchange-box">
+      <div class="wrap">
+        <div class="title">
+          <p>输入抽奖次数</p>
+          <span>{{ base }}积分可兑换1次</span>
+        </div>
+        <div class="input-box">
+          <span @click="substract">-</span>
+          <span><input v-model="count" readonly type="number" /></span>
+          <span @click="add">+</span>
+        </div>
+      </div>
+      <div class="result">
+        <span ref="total" data-total="10">剩余{{overplus}}积分</span>
+        <div class="consume" v-if="enable">本次消耗：
+          <span><i>{{consume}}</i>积分</span>
+        </div>
+        <div class="consume notice" v-else>剩余积分不足，无法兑换</div>
+      </div>
+    </section>
+    <section>
+      <template v-if="enable">
+          <div class="exchange-button" @click="submit">兑换</div>
+      </template>
+      <template v-else>
+          <div class="exchange-button disable" >兑换</div>
+      </template>
+    </section>
+    
+  </section>
+
+    
+  <script src="/dist/libs/jquery-3.2.0.min.js" type="text/javascript"></script>
+  <script src="/dist/libs/vue-2.2.0.min.js" type="text/javascript"></script>
+  <script src="/dist/commons/commons/bundle.js" type="text/javascript"></script>
+  <script src="/dist/pointmall/exchange/entry.js" type="text/javascript"></script>
+
+</body>
+</html>

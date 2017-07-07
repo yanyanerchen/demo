@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>兑换次数</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+  <link rel="stylesheet" type="text/css" href="/dist/libs/reset.min.css">
+    <link rel="stylesheet" type="text/css" href="/dist/commons/commons/styles.css">
+  <link rel="stylesheet" type="text/css" href="/dist/pointmall/editform/styles.css">
+</head>
+<body data-module="edit">
+
+  <div id="vue-root">
+    <vue-form name="address-form" :state="formState" @submit.prevent="onSubmit" class="form" ref="address-form">
+      <input type="hidden" name="gid" v-model="model.gid" data-init-value="gid"/>
+      <input type="hidden" name="ch" v-model="model.ch" data-init-value="ch"/>
+      <validate tag="div" class="form-group">
+        <label class="label require">收货人：</label>
+        <div class="control" >
+          <input 
+            name="receiver" 
+            v-model="model.receiver" 
+            type="text"
+            required 
+            placeholder="请填写收货人姓名"
+            data-init-value="fifi" 
+          />
+          <field-messages name="name" class="msg" show="$dirty">
+            <div slot="required">收货人不能为空</div>
+          </field-messages>
+        </div>
+      </validate>
+      <validate tag="div" class="form-group">
+        <label class="label">QQ：</label>
+        <div class="control">
+          <input 
+            name="qq" 
+            v-model="model.qq" 
+            type="number"
+            placeholder="请填写QQ号（选填）"
+          />
+          <field-messages name="qq" class="msg" show="$dirty">
+            <div slot="number">qq号必须为数字</div>
+          </field-messages>
+        </div>
+      </validate>
+      <validate tag="div" class="form-group">
+        <label class="label require">手机</label>
+        <div class="control">
+          <input 
+            name="tel" 
+            required 
+            v-model="model.tel" 
+            type="number"
+            pattern="^1\d{10}$"
+            placeholder="请填写收货手机号码" 
+            data-init-value="13611118888" 
+          />
+          <field-messages name="tel" class="msg" show="$dirty">
+            <div slot="required">手机号码不能为空</div>
+            <div slot="pattern">手机号码不正确</div>
+          </field-messages>
+        </div>
+      </validate>
+      <validate tag="div" class="form-group">
+        <label class="label require">所在地区：</label>
+        <div class="control" @click="selectAddress" id="test">
+          <input 
+            name="addrText"
+            type="text"
+            required 
+            readonly
+            placeholder="省/市/行政区"
+            v-model="addrText"
+            ref="area"
+            data-area="11,101,1003"
+            data-init-value="北京" 
+          />
+          <field-messages name="addrText" class="msg" show="$dirty">
+            <div slot="required">请选择省/市/行政区</div>
+          </field-messages>
+        </div>
+        <div class="addon" @click="selectAddress"></div>
+      </validate>
+      <validate tag="div" class="form-group">
+        <label class="label">街道：</label>
+        <div class="control" @click="selectStreet">
+          <input 
+            name="street"
+            v-model="street" 
+            type="text" 
+            readonly 
+            placeholder="请选择所处街道" 
+            ref="street"
+            data-street="0"
+          />
+        </div>
+        <div class="addon" @click="selectStreet"></div>
+      </validate>
+      <validate tag="div" class="form-group">
+        <div class="control">
+          <input 
+            name="h" 
+            v-model="model.h" 
+            type="text" 
+            required
+            placeholder="请填写详细地址，不少于5个字（必填）" 
+            :maxlength="maxLen" 
+            :minlength="minLen"
+            @input="trim('h',model.h)"
+          />
+          <field-messages name="h" class="msg" show="$dirty">
+            <div slot="required">详细地址不能为空</div>
+            <div slot="minlength">详细地址不少于5个字</div>
+            <div slot="maxlength">详细地址不多于80个字</div>
+          </field-messages>
+        </div>
+      </validate>
+      <template v-if="issubmit">
+         <button type="submit" class="confirm-button" >{{ submittext }}</button>
+      </template>
+      <template v-else>
+          <button type="submit" class="confirm-button disabled" disabled="disabled">{{ submittext }}</button>
+      </template>
+      
+    </vue-form>
+  </div>
+    
+  <script src="/dist/libs/jquery-3.2.0.min.js"></script>
+  <script src="/dist/libs/vue-2.2.0.min.js"></script>
+  <script src="/dist/libs/iscroll.js"></script>
+  <script src="/dist/libs/areadata.js"></script>
+  <script src="/dist/libs/iosSelect.js"></script>
+  <script src="/dist/commons/commons/bundle.js"></script>
+  <script src="/dist/pointmall/editform/entry.js"></script>
+
+
+</body>
+</html>

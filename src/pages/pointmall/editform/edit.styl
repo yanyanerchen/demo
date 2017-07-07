@@ -1,0 +1,86 @@
+@import "../../../styles/mixins.styl";
+
+// 编辑表单
+.form {
+	padding-left: px1080(60);
+	background: #fff;
+	.form-group {
+		min-height: px1080(190);
+		font-size: px1080(48);
+		display-flex();
+		vendor(box-align, center);
+		align-items: center;
+		padding-left: px1080(25);
+		.label {
+			width: px1080(285);
+			color: rgba(0,0,0,0.8);
+			display: block;
+			position: relative;
+			i {
+				color: #ec625e;
+				padding: 0 px1080(10);
+				font-style: inherit;
+				position: relative;
+				top: px1080(10);
+			}
+			&.require {
+				&:before {
+					content: '*';
+					position: absolute;
+					left: px1080(-30);
+					top: px1080(10);
+					color: #ec625e;
+				}
+			}
+		}
+		.control {
+			vendor(flex, 1);
+			padding-right: px1080(65);
+			input {
+				width: 100%;
+				border: none;
+				outline: none;
+			}
+			&.dirty {
+				input {
+					border: 1px solid red;
+				}
+			}
+			.msg {
+				margin-top: px1080(10);
+				color: red;
+				font-size: px1080(34);
+			}
+		}
+		.addon {
+			height: px1080(145);
+			width: px1080(145);
+			background: url("../../../images/arrow.png") center center no-repeat;
+			background-size: px1080(22) px1080(38);
+		}
+	}
+	.form-group + .form-group {
+		border-bottom: 1px solid #e2e2e2;
+	}
+	
+	.submit-button {
+		width: px1080(983);
+		height: px1080(120);
+		margin: px1080(36) auto 0;
+		text-align: center;
+		line-height: px1080(120);
+		color: #fff;
+		background: #cfae61;
+		vendor(border-radius, 5px);
+	}
+}
+.require {
+	position:relative;
+	&:before {
+		content: '*';
+		position: absolute;
+		left: px1080(-30);
+		top: px1080(10);
+		color: #ec625e;
+	}
+}

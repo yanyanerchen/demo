@@ -1,0 +1,132 @@
+html,
+body,
+p,
+a,
+span,
+button,
+ul,
+li {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: sans-serif;
+  font-size: 0.42rem;
+  line-height: 1.5;
+  color: #323232;
+  background-color: #eaeaea;
+}
+a,
+a:hover,
+a:visited {
+  text-decoration: none;
+  color: #323232;
+  outline: none;
+}
+.bb {
+  position: relative;
+}
+.bb:after {
+  content: "";
+  display: block;
+  width: 300%;
+  height: 2px;
+  position: absolute;
+  left: -100%;
+  bottom: 0;
+  -webkit-transform: scale(0.333);
+  transform: scale(0.333);
+  -webkit-transform-origin: center bottom;
+  transform-origin: center bottom;
+  background-color: #e2e2e2;
+}
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.2s;
+}
+.fade-enter,
+.fade-leave-active {
+  opacity: 0;
+}
+.toast-container {
+  width: 100%;
+  z-index: 9999;
+  position: fixed;
+  bottom: 1.98rem;
+  text-align: center;
+}
+.toast-container .toast-item {
+  width: auto;
+  height: 1.32rem;
+  line-height: 1.32rem;
+  background: rgba(0,0,0,0.6);
+  opacity: 1;
+  -webkit-border-radius: 0.66rem;
+  border-radius: 0.66rem;
+  color: #fff;
+  font-size: 0.48rem;
+  display: inline-block;
+  padding: 0 0.69rem;
+}
+.dialog-container {
+  width: 100%;
+  height: auto;
+  position: fixed;
+  left: 0;
+  bottom: -50%;
+  background-color: #fafafa;
+  padding: 0.48rem 0 0;
+  font-size: 0.48rem;
+  color: #323232;
+  z-index: 100;
+}
+.dialog-container .dialog-item {
+  margin: 0.3rem 0.6rem 0.6rem;
+  line-height: 1.6;
+}
+.dialog-container .dialog-item .addr {
+  color: #969696;
+  font-size: 0.42rem;
+  margin-top: 0.3rem;
+}
+.dialog-container .dialog-btn-wrap {
+  display: -webkit-box; /* OLD - iOS 6-, Safari 3.1-6 */
+  display: -moz-box; /* OLD - Firefox 19- (buggy but mostly works) */
+  display: -ms-flexbox; /* TWEENER - IE 10 */
+  display: -webkit-flex; /* NEW - Chrome */
+  display: flex; /* NEW, Spec - Opera 12.1, Firefox 20+ */
+  justify-content: space-around;
+  margin-top: 0.3rem;
+  width: 100%;
+  height: 1.56rem;
+  background-color: #f5f5f5;
+  -webkit-box-flex: 1;
+  -moz-flex-grow: 1;
+  -webkit-flex-grow: 1;
+  flex-grow: 1;
+}
+.dialog-container .dialog-title {
+  color: #ff9000;
+  font-size: 0.54rem;
+  padding: 0 0.6rem;
+  line-height: 1.8;
+}
+.dialog-container .dialog-btn {
+  height: 1.56rem;
+  line-height: 1.56rem;
+  text-align: center;
+  color: #323232;
+}
+.dialog-container .dialog-btn.dialog-btn-p {
+  color: #ff9000;
+}
+.overlay-wrap {
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.3);
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 99;
+}

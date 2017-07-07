@@ -1,0 +1,60 @@
+@import "../../../styles/mixins.styl";
+
+
+.form-address {
+	background: #fff;
+	padding-left: px1080(60);
+	.wrap {
+		min-height: px1080(168);
+		padding-right: px1080(45);
+		display-flex();
+		align-items: center;
+		.side {
+			width: px1080(155);
+			padding-left: px1080(30);
+		}
+		.main {
+			vendor(flex, 1);
+		}
+		.icon {
+			display: inline-block;
+			width: px1080(70);
+			height: px1080(70);
+			background-position: 0 0;
+			background-repeat: no-repeat;
+			&.phone {
+				background-image: url("./img/phone.png");
+			}
+			&.qq {
+				background-image: url("./img/qq.png");
+			}
+			&.addr {
+				background-image: url("./img/addr.png");
+			}
+			background-size: 100%;
+		}
+	}
+	.wrap + .wrap {
+		border-bottom: 1px solid #e2e2e2;
+	}
+}
+
+.confirm-button {
+	position: absolute;
+	bottom: px1080(36);
+	left: 50%;
+	margin-left: px1080(-491);
+	height: px1080(120);
+	line-height: px1080(120);
+	width: px1080(982);
+	vendor(border-radius, 5px);
+	background: #fff;
+	text-align: center;
+	border: 1px solid #cbcbcb;
+	font-size:px1080(48);
+	&.disabled{
+		color:rgba(0,0,0,.2);
+		border-color:rgba(130,130,130,.15);
+		background-color:#f5f5f5;
+	}
+}

@@ -1,0 +1,297 @@
+@import "../../../styles/mixins.styl";
+
+body{
+	font-family: sans-serif; 
+	font-size: px1080(36); 
+	line-height: 1.5;
+	color:#2e2f33;
+	background: #f1dca8 url(./img/bg.png) no-repeat center top;
+	background-size: 100% auto;
+	-webkit-font-smoothing: antialiased;
+}
+
+img{
+	max-width: 100%
+}
+
+.draw {
+	height: px1080(1728);
+	.draw-wnews{ 
+		position: relative;
+		height: px1080(108); 
+		padding: px1080(24) px1080(60) px1080(24)  px1080(126);
+		color: #fafafa;
+		&:before{
+			content: "";
+			position: absolute;
+			left: px1080(60);
+			top: px1080(36);
+			display: block;
+			width: px1080(45);
+			height: px1080(45);
+			float: left;
+			background:url(./img/sound.png) no-repeat;
+			background-size: 100% auto;
+		}
+		&.bb {
+			position: relative;
+			&:after {
+				content: "";
+				display: block;
+				width: 300%; 
+				height: 2px; 
+				position: absolute;
+				left: -100%;
+				bottom: 0;
+				vendor(transform, scale(.333));
+				vendor(transform-origin, center bottom);
+				background-color: rgba(130,130,130,.2);
+			}
+		}
+
+	}
+	.draw-wnews-list {
+		height: px1080(60);
+		overflow: hidden;
+		line-height: px1080(80);
+		li {
+			overflow: hidden;
+			text-overflow: ellipsis;
+			white-space: nowrap;
+		}
+	}
+	p {
+		text-align: center;
+	}
+	.draw-times{
+		color:#fafafa;
+		font-size: px1080(42);
+		span {
+			color:#e6c78a;
+		}
+	}
+	.buy-btn{
+		display:block;
+		outline:none;
+		width: px1080(420);
+		height: px1080(132);
+		background:url(./img/buytimes.png) no-repeat center top;
+		background-size: 100% auto;
+		text-indent: -99999px;
+	}
+	.record-btn{
+		display:block;
+		outline:none;
+		width: px1080(420);
+		height: px1080(132);
+		background:url(./img/awardrecord.png) no-repeat center top;
+		background-size: 100% auto;
+		text-indent: -99999px;
+	}
+	.draw-flex{
+		display-flex();
+		margin: px1080(30) px1080(105) 0;
+		justify-content:space-between;
+
+	}
+}
+// 转盘抽奖
+.draw-cont-circle{
+	position: relative;
+	width: px1080(771);
+	height: px1080(771); 
+	margin: px1080(404) auto px1080(81);
+	.draw-plate {
+		position: relative;
+		width:100%;
+		height: 100%;
+		background:url(./img/drawplate-circle.png) no-repeat;
+		background-size:100% auto;
+		&:after {
+			content:"";
+			position:absolute;
+			left: px1080(104)
+			bottom: px1080(-78);
+			display: block;
+			width: px1080(564);
+			height: px1080(60)
+			background: url(./img/drawshadow.png) no-repeat center top;
+			background-size: 100% auto;
+		}
+		&.draw-plate-set{
+			background-image: url(./img/drawplate-set.png)
+		}
+	}
+	.draw-shadow{
+		position:absolute;
+		left:50%;
+		top: px1080(305)
+		margin-left: px1080(-96)
+		width: px1080(192);
+		height: px1080(192);
+		background-color:#222326;
+		border-radius: 50%;
+	}
+	.draw-point{
+		position: absolute;
+		left: 50%;
+		top: px1080(230)
+		margin-left: px1080(-96)
+		width: px1080(192)
+		height: px1080(251)
+		background: url(./img/drawpoint.png) no-repeat;
+		background-size: 100% auto;
+		transform-origin: center px1080(155);
+		-webkit-transform-origin: center px1080(155);
+	}
+	.draw-btn{
+		position: absolute;
+		left:50%;
+		top: px1080(314)
+		margin-left: px1080(-72)
+		width: px1080(144);
+		height: px1080(144);
+	}
+	.draw-award{position:absolute;
+		left: 50%;
+		top: 50%;
+		width: px1080(238)
+		height: px1080(175)
+		text-align: center;
+		color: #7a5938;
+		transform-origin:center px1080(326)
+		-webkit-transform-origin:center px1080(326)
+		.draw-award-img{
+			width: px1080(108);
+			height: px1080(108);
+		}
+		.draw-award-name{display: block;
+			white-space: nowrap;
+		}
+		for idx in 1 2 3 4 5 6 7 8{
+			&.award{idx} {
+				vendor(transform, translate(px1080(-119), px1080(-326)) rotate((-1+idx)*45deg));
+			}
+		}
+	}
+}
+
+// 九宫格抽奖
+.draw-cont-grid{
+	position: relative;
+	width: px1080(776);
+	height: px1080(776); 
+	margin: px1080(404) auto px1080(81);
+	.draw-plate {
+		position: relative;
+		width:100%;
+		height: 100%;
+		background:url(./img/drawplate-grid.png) no-repeat;
+		background-size:100% auto;
+		&:after {
+			content:"";
+			position:absolute;
+			left: px1080(104)
+			bottom: px1080(-78);
+			display: block;
+			width: px1080(564);
+			height: px1080(60)
+			background: url(./img/drawshadow.png) no-repeat center top;
+			background-size: 100% auto;
+		}
+		&.draw-plate-set{
+			background-image: url(./img/drawplate-grid-set.png)
+		}
+	}
+	.draw-btn{
+		position: absolute;
+		left:50%;
+		top: px1080(330);
+		margin-left: px1080(-55);
+		width: px1080(110);
+		height: px1080(110);
+	}
+	.draw-award{
+		position:absolute;
+		left: px1080(48);
+		top: px1080(50);
+		width: px1080(222);
+		height: px1080(222);
+		text-align: center;
+		color: #a3774b;
+		padding-top: px1080(18);
+		vendor(border-radius,px1080(6));
+		.draw-award-img{
+			width: px1080(120);
+			height: px1080(120);
+		}
+		.draw-award-name{
+			font-size: px1080(42);
+			display: block;
+			white-space: nowrap;
+		}
+		&.award1 {
+			vendor(transform, translate(px1080(0), px1080(0)));
+		}
+		&.award2 {
+			vendor(transform, translate(px1080(229), px1080(0)));
+		}
+		&.award3 {
+			vendor(transform, translate(px1080(458), px1080(0)));
+		}
+		&.award8 {
+			vendor(transform, translate(px1080(0), px1080(227)));
+		}
+		&.award4 {
+			vendor(transform, translate(px1080(458), px1080(227)));
+		}
+		&.award7 {
+			vendor(transform, translate(px1080(0), px1080(454)));
+		}
+		&.award6 {
+			vendor(transform, translate(px1080(229), px1080(454)));
+		}
+		&.award5 {
+			vendor(transform, translate(px1080(458), px1080(454)));
+		}
+		&.pointer {
+			positon:relative;
+			background: #eb6f5c;
+			.draw-award-name{
+				color: #f5e1ba;
+			}
+			&:before{
+				content:"";
+				position:absolute;
+				left:0;
+				top:0;
+				width:100%;
+				height:100%;
+				border:px1080(3) solid #e36246;
+				vendor(border-radius,px1080(6));
+			}
+		}
+	}
+}
+
+.rule{
+	padding: 0 px1080(60)
+	p {
+		margin-bottom: px1080(42)
+	}
+	.rule-more{
+		margin-top: px1080(78)
+	}
+	.rule-tit{
+		margin-bottom: px1080(78)
+		text-indent: -99999px;
+		height: px1080(112)
+		background:url(./img/rule.png) no-repeat center top;
+		background-size: px1080(600) auto
+	}
+	a, a:hover, a:visited{
+		text-decoration: none;
+		color:#995a46; 
+		outline: none;
+	}
+}

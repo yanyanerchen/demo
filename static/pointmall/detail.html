@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>商品详情</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+  <link rel="stylesheet" type="text/css" href="/dist/libs/reset.min.css">
+  <link rel="stylesheet" type="text/css" href="/dist/commons/commons/styles.css">
+  <link rel="stylesheet" type="text/css" href="/dist/pointmall/detail/styles.css">
+</head>
+<body>
+  <article class="content">
+    <section class="slider">
+      <div>
+        <a href=""><img src="http://localhost:8004/images/creditimg1.jpg"></a>
+      </div>
+      <div>
+        <a href=""><img src="http://localhost:8004/images/creditimg1.jpg"></a>
+      </div>
+      <div>
+        <a href=""><img src="http://localhost:8004/images/creditimg1.jpg"></a>
+      </div>
+    </section>
+    <section class="goods-info">
+      <h1 class="title">金立线控自拍杆</h1>
+      <div class="price-wrap">
+        <div class="member-price"><span>金卡会员价</span><b>230万</b>积分</div>
+        <div class="market-price">市场参考价：980.00元</div>
+      </div>
+    </section>
+    <section class="upgrade-member">
+      <div class="tips">升级会员后，将享有更多折扣</div>
+      <p class="platinum">铂金会员价<span class="num">199万</span>积分</p>
+      <p class="diamonds">钻石会员价<span class="num">99万</span>积分</p>
+      <p class="blackgold">黑金会员价<span class="num">9万</span>积分</p>
+    </section>
+    <section class="goods-desc">
+      <h3>商品描述</h3>
+      <p class="desc">请在此处输入描述文字，诸如商品尺寸样式材质，产地，生产日期，配送方式，此段文字仅为示意</p>
+      <img src=""></img>
+    </section>
+    <footer>
+      <div class="inner" id="proExchange" ref="issoldout" data-issoldout="false">
+        <input type="hidden" name="ch" id="ch" v-model="model.ch" ref="ch" data-init-value=${ch}>
+        <div class="price" ref="gid" data-gid="512">单价:<b>230万</b><span>积分</span></div>
+        <template v-if="issoldout==='true'">
+           <a id="exchange" class="exchange disable">已抢光</a>
+        </template>
+        <template v-else>
+            <a id="exchange" class="exchange" @click="exchange">我要兑换</a>
+        </template>
+        
+      </div>
+    </footer>
+  </article>
+    
+  <script src="/dist/libs/jquery-3.2.0.min.js"></script>
+  <script src="/dist/libs/slick.min.js" ></script>
+  <script src="/dist/libs/autoscroll.js" ></script>
+  <script src="/dist/libs/vue-2.2.0.min.js" ></script>
+  <script src="/dist/commons/commons/bundle.js"></script>
+  <script src="/dist/pointmall/detail/entry.js"></script>
+
+
+</body>
+</html>

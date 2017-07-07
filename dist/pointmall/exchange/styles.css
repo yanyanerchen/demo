@@ -1,0 +1,95 @@
+.exchange {
+  background: #eaeaea;
+}
+.exchange .exchange-box {
+  background: #fff;
+  padding: 0 0.42rem;
+  border-bottom: 1px solid #e2e2e2;
+}
+.exchange .wrap {
+  padding: 0.45rem 0;
+  overflow: hidden;
+}
+.exchange .title {
+  float: left;
+}
+.exchange .title > p {
+  font-size: 0.48rem;
+}
+.exchange .title > span {
+  color: rgba(0,0,0,0.4);
+  font-size: 0.36rem;
+}
+.exchange .input-box {
+  float: right;
+  display: -webkit-box; /* OLD - iOS 6-, Safari 3.1-6 */
+  display: -moz-box; /* OLD - Firefox 19- (buggy but mostly works) */
+  display: -ms-flexbox; /* TWEENER - IE 10 */
+  display: -webkit-flex; /* NEW - Chrome */
+  display: flex; /* NEW, Spec - Opera 12.1, Firefox 20+ */
+  background: #ededed;
+}
+.exchange .input-box > span {
+  display: inline-block;
+  width: 0.96rem;
+  height: 0.96rem;
+  line-height: 0.96rem;
+  text-align: center;
+}
+.exchange .input-box > span:nth-child(1),
+.exchange .input-box > span:nth-child(3) {
+  color: #c2c2c2;
+  font-size: 0.8rem;
+}
+.exchange .input-box > span:nth-child(2) {
+  width: 1.56rem;
+  border-left: 1px solid #fff;
+  border-right: 1px solid #fff;
+}
+.exchange .input-box > span > input {
+  height: 100%;
+  width: 100%;
+  border: none;
+  background: #ededed;
+  text-align: center;
+  outline: none;
+}
+.exchange .result {
+  clear: both;
+  font-size: 0.36rem;
+  height: 1.15rem;
+  padding-top: 0.35rem;
+}
+.exchange .result > span {
+  display: inline-block;
+  color: rgba(0,0,0,0.6);
+}
+.exchange .result .consume {
+  float: right;
+  color: rgba(0,0,0,0.6);
+}
+.exchange .result .consume > span {
+  color: #d1773b;
+}
+.exchange .result .consume > span > i {
+  font-style: inherit;
+  font-size: 0.6rem;
+  line-height: 0;
+}
+.exchange .result .consume.notice {
+  color: #ec625e;
+}
+.exchange .exchange-button {
+  width: 9.83rem;
+  height: 1.2rem;
+  margin: 0.36rem auto 0;
+  text-align: center;
+  line-height: 1.2rem;
+  color: #fff;
+  background: #cfae61;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+}
+.exchange .exchange-button.disable {
+  opacity: 0.5;
+}

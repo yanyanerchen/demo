@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>积分商城</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+  <link rel="stylesheet" type="text/css" href="/dist/libs/reset.min.css">
+  <link rel="stylesheet" type="text/css" href="/dist/commons/commons/styles.css">
+  <link rel="stylesheet" type="text/css" href="/dist/pointmall/draw/styles.css">
+</head>
+<body data-module="drawgrid">
+  
+  <section class="draw" id="draw">
+    <input type="hidden" name="ch" id="ch" v-model="model.ch" ref="ch" data-init-value=${ch}>
+    <div class="draw-wnews bb">
+      <div class="draw-wnews-list">
+        <ul>
+          <li>恭喜艾克里里中得金立S9!</li>
+          <li>恭喜fifi中得蓝牙音箱!</li>
+          <li>恭喜隐形的翅膀中得M2017真皮手包礼包</li>
+        </ul>
+      </div>
+    </div>
+    <div class="draw-cont-grid">
+      <template v-if="issetting">
+      <div class="draw-plate draw-plate-set"></div>
+      </template>
+      <template v-else>
+      <div class="draw-plate" >
+          <div class="draw-award award1">
+            <img src="http://bbs.amigo.cn/static/activity/201701/images/award_m2017_s.png" class="draw-award-img">
+            <span class="draw-award-name">M2017</span>
+          </div>
+          <div class="draw-award award2">
+            <img src="http://bbs.amigo.cn/static/activity/201701/images/award_note_s.png" class="draw-award-img">
+            <span class="draw-award-name">定制笔记本</span>
+          </div>
+          <div class="draw-award award3">
+            <img src="http://bbs.amigo.cn/static/activity/201701/images/award_ticket20_s.png" class="draw-award-img">
+            <span class="draw-award-name">话费券</span>
+          </div>
+          <div class="draw-award award4">
+            <img src="http://bbs.amigo.cn/static/activity/201701/images/award_m2017_s.png" class="draw-award-img">
+            <span class="draw-award-name">M2017</span>
+          </div>
+          <div class="draw-award award5">
+            <img src="http://bbs.amigo.cn/static/activity/201701/images/award_note_s.png" class="draw-award-img">
+            <span class="draw-award-name">定制笔记本</span>
+          </div>
+          <div class="draw-award award6">
+            <img src="http://bbs.amigo.cn/static/activity/201701/images/award_ticket20_s.png" class="draw-award-img">
+            <span class="draw-award-name">话费券</span>
+          </div>
+          <div class="draw-award award7">
+            <img src="http://bbs.amigo.cn/static/activity/201701/images/award_note_s.png" class="draw-award-img">
+            <span class="draw-award-name">定制笔记本</span>
+            </div>
+          <div class="draw-award award8">
+            <img src="http://bbs.amigo.cn/static/activity/201701/images/award_ticket20_s.png" class="draw-award-img">
+            <span class="draw-award-name">话费券</span>
+          </div>
+      </div>
+      <!-- <div class="draw-point" id="drawPoint"></div> -->
+      <div class="draw-btn" id="drawBtn" v-on:click="getAward(2)">
+        <transition name="fade">
+        <img src="/dist/images/draw-start-text.png" v-if="status==1">
+        <img src="/dist/images/draw-win-text.png" v-if="status==2">
+        </transition>
+      </div>
+      </template>
+    </div>
+    <p class="draw-times">今天剩余次数：<span>{{ times }}次</span></p>
+    <div class="draw-flex"><a :href="'auth/draw/record.do?'+modelToString" class="record-btn">中奖记录</a><a :href="'auth/draw/exchangepage.do?'+modelToString" class="buy-btn">购买次数</a></div>
+   </section>
+  
+  <section class="rule" id="rule">
+    <h1 class="rule-tit">抽奖规则</h1>
+    <p>1. 黑金会员每天有1次免贶抽奖机会，消耗20积分可增加1次。  <a href="">赚积分 &gt;</a></p>
+    <p>2. 请在个人资料里填写正确的收货地址，如：深圳市车公庙东海国际大厦B座12楼XX（收）。   <a :href="'auth/pshop/addresspage.do?'+modelToString">填写收货地址 &gt;</a></p>
+    <p>３. 最终解释权归金立官方所有。</p>
+    <p class="rule-more"><a href="">更多细则 &gt;</a></p>
+  </section>
+    
+  <script src="/dist/libs/jquery-3.2.0.min.js"></script>
+  <script src="/dist/libs/slick.min.js" ></script>
+  <script src="/dist/libs/autoscroll.js" ></script>
+  <script src="/dist/libs/vue-2.2.0.min.js" ></script>
+  <script src="/dist/commons/commons/bundle.js"></script>
+  <script src="/dist/pointmall/draw/entry.js"></script>
+
+
+</body>
+</html>
